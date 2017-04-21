@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Scraping With Mongoose</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">  
+  <!--<link rel="stylesheet" type="text/style" src="./assets/css/style.css">  -->  
+  </head>
+  <body>
+    <div class="container">
+      <div class="row col-sm-12 text-center">
+        <div id="news-header" class="col-sm-12 text-center">
+          <h2 id="article_id"></h2>
+        </div>
+
+            <div id="reviews" class="col-sm-8">
+              <ul>
+                  <h2>Review-1:</h2>
+                  <li class="review_id"> </li>
+                  
+                  <button type="delete" id="clear" class="btn btn-danger btn-sm"> DELETE </button>
+              </ul>
+            </div>
+
+            <div id="add-review" class="col-sm-4">
+
+              <form action="/submit" method="post">
+
+                  <h1>Hi User!</h1>
+                  <h2>Enter a Review!</h2>
+                  
+                  <div class="form-group">
+                  <label for="usr">Name:</label>
+                  <input type="text" class="form-control" id="usr" required>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                  <label for="comment">Comment:</label>
+                  <textarea class="form-control" rows="10" id="comment">Write Review Here</textarea>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                  <button  id="submit"type="submit" class="btn btn-lg">Submit</button>
+                  <button type="edit" id="update" class="btn btn-primary btn-lg"> EDIT </button>
+                  </div>
+                  <br>
+                  <a href="/reviews"><strong>See your reviews!</strong></a>
+                  |
+                  <a href="/user"><strong>See your profile!</strong></a>
+                  |
+                  <a href="/populateduser"><strong>See your profile, populated with notes!</strong></a>
+
+              </form>
+
+            </div>
+        </div>
+    </div>
+        <script src="./assets/js/app.js"></script>
+
+  </body>
+</html>

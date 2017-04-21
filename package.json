@@ -1,0 +1,25 @@
+{
+  "name": "dashofmongo",
+  "version": "1.0.0",
+  "description": "MOngoDb and Mongoose with node express",
+  "main": "index.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeenaRekhi/DashofMongo.git"
+  },
+  "keywords": [
+    "mongo"
+  ],
+  "author": "Veena rekhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VeenaRekhi/DashofMongo/issues"
+  },
+  "homepage": "https://github.com/VeenaRekhi/DashofMongo#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

@@ -1,18 +1,49 @@
-<div class="container-fluid">
-        <div class="row">
-          <div clas="row-header text-center">
-              <h2>News Scraper For Charlotte-Local News!!</h2>
-              <h3><i>Charlotte's most-happening channel!</i></h3>
-          </div>
-            <div class="col-sm-8 text-center">
+ <div class="container">
+      <div class="row col-sm-12 text-center">
+        <div id="news-header" class="col-sm-12 text-center">
+          <h2 id="article_id"></h2>
+        </div>
 
-                <div id="newsArticles">
-                 
-                </div>
+            <div id="reviews" class="col-sm-8">
+              <ul>
+                  <h2>Review-1:</h2>
+                  <li class="review_id"> </li>
+                  
+                  <button type="delete" id="clear" class="btn btn-danger btn-sm"> DELETE </button>
+              </ul>
             </div>
-        </div>            
-        <div id="reviews" class="col-sm-4"></div>
-      </div>
 
-    </diV>
-  </div>
+            <div id="add-review" class="col-sm-4">
+
+              <form action="/submit" method="post">
+
+                  <h1>Hi User!</h1>
+                  <h2>Enter a Review!</h2>
+                  
+                  <div class="form-group">
+                  <label for="usr">Name:</label>
+                  <input type="text" class="form-control" id="usr" required>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                  <label for="comment">Comment:</label>
+                  <textarea class="form-control" rows="10" id="comment">Write Review Here</textarea>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                  <button  id="submit"type="submit" class="btn btn-lg">Submit</button>
+                  <button type="edit" id="update" class="btn btn-primary btn-lg"> EDIT </button>
+                  </div>
+                  <br>
+                  <a href="/reviews"><strong>See your reviews!</strong></a>
+                  |
+                  <a href="/user"><strong>See your profile!</strong></a>
+                  |
+                  <a href="/populateduser"><strong>See your profile, populated with notes!</strong></a>
+
+              </form>
+
+            </div>
+        </div>
+    </div>
+        <script src="./assets/js/app.js"></script>

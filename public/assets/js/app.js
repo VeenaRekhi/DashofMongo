@@ -66,7 +66,7 @@ $(document).on("click", "#savereview", function() {
 	// Run a POST request to change the review, using what's entered in the inputs
 	$.ajax({
 		method: "POST",
-		url: "/newsArticles/" + thisId,
+		url: "/NewsArticle/" + thisId,
 		data: {
 
 			// Value taken from title input

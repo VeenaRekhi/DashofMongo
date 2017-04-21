@@ -6,6 +6,7 @@ var router = express.Router();
 
 // Import the model (NewsArticle.js) to use its database functions.
 var NewsArticle = require("../models/NewsArticle.js");
+var Review = require("../models/Review.js");
 
 //===========================================================================================
 router.get("/", function(req, res) {//=== For this we need "get"
@@ -80,7 +81,7 @@ console.log(req.params.id);
 //=========================================================================================== 
 
 // Create a new review or replace an existing review
-router.post("/submit", function(req, res) {
+router.post("/NewsArticle/:id", function(req, res) {
 
   // Create a new review and pass the req.body to the entry
   var newReview = new Review( req.body);
@@ -95,20 +96,20 @@ router.post("/submit", function(req, res) {
     // Otherwise
     else {
       // Use the newsarticle id to find and update it's review
-      NewsArticle.findOneAndUpdate({ "_id": req.params.id }, { "note": doc._id })
+      NewsArticle.findOneAndUpdate({}, { $push: { "reviews": doc._id } }, { new: true }, function(err, newdoc) {
 
       // Send any errors to the browser
-        if (err) {
+        if (error) {
           res.send(err);
         }
         // Or send the newdoc to the browser
         else {
           res.send(newdoc);
         }
-      };
-    })
-  });
-
+      });
+    }
+});
+});
 
   // Route to see what user looks like WITH populating
 router.get("/populateNewsArticle", function(req, res) {

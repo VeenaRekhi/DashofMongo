@@ -67,6 +67,7 @@ console.log(req.params.id);
 
   .exec(function(error, doc)  {
 
+    console.log(doc);
     // Log any error
     if (error)  {
       console.log(error);
@@ -97,13 +98,14 @@ router.post("/NewsArticle/:id", function(req, res) {
     else {
       // Use the newsarticle id to find and update it's review
       NewsArticle.findOneAndUpdate({}, { $push: { "reviews": doc._id } }, { new: true }, function(err, newdoc) {
-
-      // Send any errors to the browser
+       // Send any errors to the browser
+        //console.log(newdoc);
         if (error) {
           res.send(err);
         }
         // Or send the newdoc to the browser
         else {
+          //console.log(newdoc);
           res.send(newdoc);
         }
       });
@@ -111,17 +113,18 @@ router.post("/NewsArticle/:id", function(req, res) {
 });
 });
 
-  // Route to see what user looks like WITH populating
-router.get("/populateNewsArticle", function(req, res) {
+  // Route to see what NewsArticle looks like WITH populating
+router.get("/populateNewsArticle/:id", function(req, res) {
   // Prepare a query to find all users..
-  NewsArticle.find({})
+  NewsArticle.findOne({})
     // ..and on top of that, populate the notes (replace the objectIds in the notes array with bona-fide notes)
     .populate("reviews")
     // Now, execute the query
-    .exec(function(error, doc) {
+    .exec(function(error, NewsArticle) {
       // Send any errors to the browser
       if (error) {
         res.send(error);
+        console.log("NewsArticle");
       }
       // Or send the doc to the browser
       else {
@@ -131,18 +134,25 @@ router.get("/populateNewsArticle", function(req, res) {
 });
 
 
-// //====================================================================================
-// router.put("/:id", function(req, res) {  // Using the request "put" for a specific "condition"
-//   var condition = "id = " + req.body.id;  // with a given "id" for "delete" route.
+//====================================================================================
+router.delete("NewsArticle/:id", function(req, res) {  // Using the request "put" for a specific "condition"
+  var condition = "id = " + req.body.id;  // with a given "id" for "delete" route.
 
-//   console.log("condition", condition);
+  console.log("condition", condition);
 
-//   NewsArticle.delete({             // === Now updating the response with the given "condition"
-//     review: req.body.id
-//   }, condition, function() {
-//     res.redirect("/");
-//   });
-// });
+  Review.findByIdAndRemove(req.params.reviewId, function(err, review) {// === Now updating the response with the given "condition"
+    //review: req.body.id,
+    //review: req.title.id
+  var response = {
+    message: "Review successfully deleted!",
+    id: review._id
+  };
+    res.send(response);
+  
+  });
+});
+
+
 
 // //====================================================================================
 // Export routes for server.js to use.

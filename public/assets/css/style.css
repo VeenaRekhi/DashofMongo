@@ -1,50 +1,168 @@
-body { background-color: #F2F6D0 }
-      #wrapper {
+      
+
+
+* {
+  box-sizing: border-box;
+    }
+
+body {
+
+     font-family: 'Georgia', Times, Times New Roman, serif;
+     font-size: 18px;
+     line-height: 30px;
+     
+    }
+
+h1  {
+      font-size: 36px;
+      font-family: 'Georgia', Times, Times new Roman, serif;
+      line-height: 50px;
+      margin-bottom: 20px;
+      color: solid #4aaaa5;
+      border-bottom: 3px solid #333;
+      padding-bottom: 20px;
+    }
+
+h3  {
+      font-size: 26px;
+    }
+
+h4,   {
+        font-size: 22px;
+        color: solid black;
+    }
+
+span  {
+     color: solid;
+     font-size: 22px;
+    }
+
+h1  {
+      font-size: 36px;
+      font-family: 'Georgia', Times, Times new Roman, serif;
+      line-height: 50px;
+      margin-bottom: 20px;
+      color: #4aaaa5;
+      border-bottom: 3px solid #333;
+      padding-bottom: 20px;
+    }
+
+h2, h3  {
+      font-size: 26px;
+    }
+
+
+#wrapper {
         width: 960px;
         margin-left: auto;
         margin-right: auto;
         padding-top: 5%;
-      }
-      #newsArticles {
+      } 
+
+#newsArticles {
         display: inline-block;
         overflow: auto;
         width: 60%;
         height: 700px;
       }
-      #reviews {
+      
+#reviews {
         float: right;
         width: 30%;
       }
-      textarea, input {
-        display: block;
-        width: 100%;
-        background-color: #FCF5C7;
-      }
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-      textarea {
-        height: 200px;
-        font-size: 18px;
-      }
-      .jumbotron {
+
+      
+
+.jumbotron {
       background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)
       }
-    /* Add a gray background color and some padding to the footer */
+
+      
+/*container*/
+
+.container  {
+
+      background-image: url('images/img1.jpeg');
+      background: transparent;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #4aaaa5;
+      z-index: 99;
+      width: 100%;
+      overflow: auto;
+      border-color: #cccccc;
+      border-bottom: 5px solid #ccc;
+      margin: 0 0 30px;
+      font-size: 22px;
+
+     }
+ /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+  /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #030000;
+      background-color: #000000;
       padding: 25px;
     }
-
-    input {
-        display: block;
-        height: 36px;
-        width: 200px;
-        font-size: 24px;
-      }
-      textarea {
-        width: 200px;
-        height: 200px;
-      }
     
+/*form*/
+.form-control {
+            width: 75%;
+            margin: 15px;
+        };
+
+label, 
+input[type=text],
+input[type=title],
+input[type=body],
+textarea  {
+          display: block;
+          width: 100%;
+           }
+ 
+input[type=text],
+input[type=title],
+input[type=body],
+textarea  {
+          height: 30px;
+          border: 1px solid #333;
+          padding: 0 20px;
+          font-size: 14px;
+           }
+
+textarea  {
+          height: 200px;
+          }
+
+#savereview,
+#deletereiew {
+          background: #4aaaa5;
+          border: 0 none;
+          color: #fff;
+          font-size: 18px;
+          padding: 10px 30px;
+          cursor: pointer;
+          }
+
+#savereview:hover  {
+  color: white;
+  background-color: solid black;
+  -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+
+#deletereview:hover  {
+  color: white;
+  background-color: solid black;
+  -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+
+ 
+
+   

@@ -36,10 +36,10 @@ var NewsArticleSchema = new Schema ({
 		required: true
 	},
 	// This only saves one review's ObjectId, ref refers to the Review model
-	review: {
+	reviews: [{
 		type: Schema.Types.ObjectId,
 		ref: "Review"
-	}
+	}]
 });
 
 // Create the NewsArticle model with the NewsArticle Schema

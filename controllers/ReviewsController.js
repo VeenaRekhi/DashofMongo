@@ -23,7 +23,7 @@ console.log(req.params.id);
 
 	// now, execute our query
 
-	.exec(function(error, doc)  {
+	.exec(function(error, reviews)  {
 
 		// Log any error
 		if (error)  {
@@ -31,7 +31,8 @@ console.log(req.params.id);
 		}
 		// Otherwise, send the doc to the browser as a json object
 		else {
-			res.json(doc);
+			res.json(reviews);
+      console.log("The reviews are an array: " + reviews);
 		}
 	});
 });
